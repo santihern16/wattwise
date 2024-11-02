@@ -1,0 +1,86 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}WattWise - Home{% endblock %}
+
+{% block body %}
+<body>
+    <!-- Agregación de hoja de estilos página Index(CSS) -->
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+    <section class="services">
+      <h2>Nuestros Servicios</h2>
+      <div class="main">
+        <ul class="cards">
+          <li class="cards_item">
+            <a href="{% url 'ecoride' %}" class="card-link">
+              <div class="card">
+                  <div class="card_image">
+                    <img src="{% static 'img/scooter-electrica copy.png' %}" alt="Scooter"/>
+                  </div>
+                  <div class="card_content">
+                      <h2 class="card_title">EcoRide Urbano</h2>
+                    <div class="card_text">
+                      <p>Viaja al futuro con nuestros scooters eléctricos. Diseño elegante, conducción suave y cero emisiones. Perfecto para tus desplazamientos diarios</p>
+                    </div>
+                  </div>
+              </div>
+            </a>
+          </li>
+      
+          <li class="cards_item">
+            <a href="ecoride.html" class="card-link">
+              <div class="card">
+                <div class="card_image">
+                  <img src="{% static 'img/BYD CAR.png' %}" alt="EcoDrive" />
+                </div>
+                <div class="card_content">
+                  <h2 class="card_title">EcoDrive Dynamics</h2>
+                  <div class="card_text">
+                    <p>Experimenta la conducción del futuro con nuestros vehículos eléctricos de alta gama. Potencia, eficiencia y tecnología de vanguardia se unen en un solo vehículo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+      
+          <li class="cards_item">
+            <a href="{% url 'evSimulator' %}" class="card-link">
+              <div class="card">
+                <div class="card_image">
+                  <img src="{% static 'img/ev-simulator.png' %}" alt="EV Simulator"/>
+                </div>
+                <div class="card_content">
+                  <h2 class="card_title">EV Simulator</h2>
+                  <div class="card_text">
+                    <p>Prueba nuestra herramienta para calcular el consumo energético de tu vehículo eléctrico o para simular el de uno, si estás considerando adquirirlo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  
+    <section class="hero">
+        <div class="hero-content">
+          <h1>Revoluciona tu<br>Experiencia en Movilidad</h1>
+        </div>
+    </section>
+  
+    <section class="contact-section">
+      <h2>Contáctanos</h2>
+      <p>¿Quieres que trabajemos juntos? ¡Déjanos tus datos y nos pondremos en contacto contigo en breve! Estaremos felices de tener noticias tuyas pronto.</p>
+      <form>      
+        <input name="name" type="text" class="feedback-input" placeholder="Nombre" />   
+        <input name="email" type="text" class="feedback-input" placeholder="Correo" />
+        <textarea name="text" class="feedback-input" placeholder="Comentario"></textarea>
+        <input type="submit" value="Enviar"/>
+      </form>
+    </section>  
+      <!-- Add Bootstrap and custom JavaScript (replace with your custom.js file) -->
+  </body>
+{% endblock  %}

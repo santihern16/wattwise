@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}
+    EV Simulator
+{% endblock  %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'styles/evsimulator.css' %}">
+<section>
+    <h2 class="h2">Vehiculos Registrados</h2>
+    <div">
+    {% if vehiculos %}
+    <div class="container">
+        {% for v in vehiculos %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'img/ford.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ v.marca_modelo }}</h5>
+              <p class="card-text">Año {{ v.ano_fabricacion }}</p>
+              <p class="card-text">Transmisión {{ v.tipo_transmision }}</p>
+              <p class="card-text">Motor {{ v.tamano_motor }} CC</p>
+              <a href="{% url 'calculator' v.id %}" class="btn btn-primary">Hacer Cálculo</a>
+            </div>
+          </div>        
+        {% endfor %}
+    </div> 
+    {% else %}
+        <p>No tienes Vehiculos registrados para utilizar el EVSimulator</p>
+        <a href="{% url 'profile' %}" class="btn btn-primary">Haz click aquí para realizar el registro!</a>
+    {% endif %}
+           
+    </div>
+</section>
+{% endblock %}

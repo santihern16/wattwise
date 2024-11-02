@@ -1,0 +1,38 @@
+body {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+  }
+  
+  /* Estilos de la parte de navegacion */
+  .header {
+    font-family: "Raleway", sans-serif;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header .nav a {
+    color: #666;
+  }
+  
+  .navhead{
+    font-size: 18px;
+  }
+  
+  .nav a:hover {
+    color: #44d62c;
+  }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.dropdown {
+  margin-right: 37px; /* Ajusta este valor según lo necesites */
+}

@@ -1,0 +1,82 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}
+    User Profile
+{% endblock  %}  <!-- Load the static template tag to access static files -->
+
+{% block body %}
+    <link rel="stylesheet" href="{% static 'styles/profile.css' %}"> 
+        <div class="profile-container">
+            <img src="{% static 'img/profile.jpg' %}" alt="Profile Picture" class="profile-picture">
+            <h1 class="user-name">Bienvenido, {{ user.username }}!</h1>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Joined:</strong> {{ user.date_joined }} </p>
+            <p><strong>Last Login:</strong> {{ user.last_login }} </p>
+        </div> 
+        <div class="profile-container">
+            <h1>Mis vehiculos</h1>
+
+            {% if vehiculos %}
+                <ul>
+                    {% for v in vehiculos %}
+                        <li> {{v.marca_modelo}} </li>
+                    {% endfor %}
+                </ul>
+                <button id="showFormButton">Registra otro Vehículo!</button>
+            {% else %}
+                <p>Parece que no tienes vehiculos registrados...</p>
+                <button id="showFormButton">Registrar ahora!</button>
+            {% endif %}
+            {{ error }}
+            <div id="vehicleForm" style="display: none;">
+
+                <form action="registrarVehiculo/" method="POST">
+                    {% csrf_token %}
+                    <!-- Datos del Vehículo -->
+                    <fieldset class="border p-4 mb-4">
+                        <legend class="w-auto">Información del Vehículo</legend>
+                        <div class="mb-3">
+                            <label for="marcaModelo" class="form-label">* Marca y Modelo</label>
+                            <input type="text" class="form-control" name="marcaModelo" id="marcaModelo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="anoFabricacion" class="form-label">* Año de Fabricación</label>
+                            <input type="number" class="form-control" name="anoFabricacion" id="anoFabricacion" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tipoCombustible" class="form-label">* Tipo de Combustible</label>
+                            <select class="form-select" name="tipoCombustible" id="tipoCombustible" required>
+                                <option value="">Seleccione...</option>
+                                <option value="gasolina">Gasolina</option>
+                                <option value="diesel">Diésel</option>
+                                <option value="diesel">Gas natural</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tamanoMotor" class="form-label">* Tamaño del Motor (CC)</label>
+                            <input type="number" class="form-control" name="tamanoMotor" id="tamanoMotor" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tipoTransmision" class="form-label">* Tipo de Transmisión</label>
+                            <select class="form-select" name="tipoTransmision" id="tipoTransmision" required>
+                                <option value="">Seleccione...</option>
+                                <option value="manual">Manual</option>
+                                <option value="automatica">Automática</option>
+                            </select>
+                        </div>
+                    </fieldset>            
+                    <button type="submit" class="btn btn-success">Registrar</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.getElementById('showFormButton').addEventListener('click', function() {
+            var form = document.getElementById('vehicleForm');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+            });
+        </script>
+{% endblock  %}

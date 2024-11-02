@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html' %}
+{% load static%}
+{% block title %}
+    Ecoride Urbano
+{% endblock  %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'styles/ecoride.css' %}">
+    <div class="text-center">
+        <h1>EcoRide Urbano</h1>
+    <p>El futuro de la movilidad está aquí. Descubre nuestros scooters eléctricos que te llevarán donde quieras con cero emisiones.</p>
+    </div>  
+  <section class="features">
+    <h2>Características</h2>
+    <ul>
+      <li>Autonomía: Hasta 100 km con una sola carga.</li>
+      <li>Velocidad máxima: 25 km/h.</li>
+      <li>Carga rápida en menos de 3 horas.</li>
+      <li>Diseño compacto y ligero.</li>
+    </ul>
+  </section>
+  
+  <section class="gallery">
+    <h2>Galería</h2>
+    <img src="{% static 'img/scooter-electrica copy.png' %}" alt="Scooter eléctrico">
+    <!-- Agregar más imágenes si es necesario -->
+  </section>
+  
+  <section class="pricing">
+    <h2>Precios</h2>
+    <p>A partir de $1,200 USD</p>
+    <button>Comprar ahora</button>
+  </section>
+{% endblock  %}
