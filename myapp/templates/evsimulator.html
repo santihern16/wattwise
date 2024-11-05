@@ -7,8 +7,17 @@
 {% block body %}
 <link rel="stylesheet" href="{% static 'styles/evsimulator.css' %}">
 <section>
+    {% if messages %}
+        <div class="container mt-3">
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
     <h2 class="h2">Vehiculos Registrados</h2>
-    <div">
+    <div>
     {% if vehiculos %}
     <div class="container">
         {% for v in vehiculos %}
@@ -19,7 +28,8 @@
               <p class="card-text">Año {{ v.ano_fabricacion }}</p>
               <p class="card-text">Transmisión {{ v.tipo_transmision }}</p>
               <p class="card-text">Motor {{ v.tamano_motor }} CC</p>
-              <a href="{% url 'calculator' v.id %}" class="btn btn-primary">Hacer Cálculo</a>
+              <a href="{% url 'registrarConsumo' v.id %}" class="btn btn-primary">Hacer Cálculo</a>
+              <a href="{% url 'registroPorVehiculo' v.id %}" class="btn btn-primary">Ver Cálculos Hechos</a>
             </div>
           </div>        
         {% endfor %}

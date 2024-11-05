@@ -1,0 +1,84 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}
+    Consumos Registrados
+{% endblock  %}
+
+{% block body %}
+<style>
+    /* Contenedor de las tarjetas */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* Estilos para la tarjeta */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilos para los enlaces dentro de la tarjeta */
+.card a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 20px;
+}
+
+/* Estilos para los enlaces al pasar el ratón */
+
+
+/* Estilos adicionales para mejorar la apariencia */
+.card h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.card button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+</style>
+<div>
+   <h1>Todos los Resultados</h1>
+   <div>
+    {% if consumos %}
+    <div class="container">
+        {% for c in calculos %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ c.vehiculo }}</h5>                  
+              <p class="card-text">Consumo Anual: {{ c.consumo_anual }} L</p>
+            </div>
+          </div>        
+        {% endfor %}
+    </div> 
+    {% else %}
+        <p>No tienes Consumos registrados en el EVSimulator</p>
+        <a href="{% url 'profile' vehiculo.id %}" class="btn btn-primary">Haz click aquí para realizar el registro!</a>
+    {% endif %}
+           
+    </div>
+</div>
+{% endblock %}

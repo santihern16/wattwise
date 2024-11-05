@@ -1,0 +1,31 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}
+    Registros de Consumo del Vehículo
+{% endblock  %}
+
+{% block body %}
+<div class="container">
+    <h1>Registros de Consumo del Vehículo: {{ vehiculo.marca_modelo }}</h1>
+    {% if consumos %}
+        {% for consumo in consumos %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Registro de Consumo # {{ forloop.counter }} </h5>
+                    <p class="card-text">Kilometraje Anual: {{ consumo.kilometraje_anual }} km</p>
+                    <p class="card-text">Consumo Promedio: {{ consumo.consumo_promedio }} L/100km</p>
+                    <p class="card-text">Distancia Promedio por Viaje: {{ consumo.distancia_promedio }} km</p>
+                    <p class="card-text">Frecuencia de Conducción: {{ consumo.frecuencia_conduccion }}</p>
+                    <p class="card-text">Precio del Combustible: ${{ consumo.precio_combustible }} por galón</p>
+                    <p class="card-text">Costos de Mantenimiento: ${{ consumo.costos_mantenimiento }} por año</p>
+                    <p class="card-text">Impuestos Vehiculares: ${{ consumo.impuestos_vehiculares }} por año</p>
+                    <p class="card-text">Seguros: ${{ consumo.seguros }} por año</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No hay registros de consumo para este vehículo.</p>
+        <a href="{% url 'registrarConsumo' vehiculo.id %}" class="btn btn-primary">Hacer Registro de Consumo</a>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}
+    Resultados del Consumo
+{% endblock  %}
+
+{% block body %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Resultados</h1>
+    
+    <!-- Sección de Datos de Entrada -->
+    <div class="card mb-4 shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>Datos de Consumo Ingresados</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Kilometraje anual:</strong> {{ consumo.kilometraje_anual }} km</li>
+            <li class="list-group-item"><strong>Consumo Promedio:</strong> {{ consumo.consumo_promedio }} L/100km</li>
+            <li class="list-group-item"><strong>Distancia Promedio:</strong> {{ consumo.distancia_promedio }} km</li>
+            <li class="list-group-item"><strong>Frecuencia de Conducción:</strong> {{ consumo.frecuencia_conduccion }}</li>
+            <li class="list-group-item"><strong>Precio del Combustible:</strong> ${{ consumo.precio_combustible }} por galón</li>
+            <li class="list-group-item"><strong>Costos de Mantenimiento:</strong> ${{ consumo.costos_mantenimiento }} anuales</li>
+            <li class="list-group-item"><strong>Impuestos Vehiculares:</strong> ${{ consumo.impuestos_vehiculares }} anuales</li>
+            <li class="list-group-item"><strong>Seguros Vehiculares:</strong> ${{ consumo.seguros }} anuales</li>
+        </ul>
+    </div>
+    
+    <!-- Sección de Resultados de Cálculos -->
+    <div class="card shadow">
+        <div class="card-header bg-success text-white text-center">
+            <h3>Cálculos de Costos y Consumo</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for calculo in calculos %}
+                <li class="list-group-item"><strong>Consumo Anual de Combustible:</strong> {{ calculo.consumo_anual }} L</li>
+                <li class="list-group-item"><strong>Costo Anual de Combustible:</strong> ${{ calculo.costo_anual_combustible }}</li>
+                <li class="list-group-item"><strong>Costo Total de Mantenimiento, Impuestos y Seguros:</strong> ${{ calculo.costo_fijo_anual }}</li>
+                <li class="list-group-item"><strong>Costo Total Anual de Uso del Vehículo:</strong> ${{ calculo.costo_total_anual }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
