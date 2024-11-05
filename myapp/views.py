@@ -130,3 +130,6 @@ def calculator(request, id):
     return render(request, 'calculator.html', {
         'vehiculo': vehiculo
     })
+    
+def hola_mundo(request):
+    return render(request, 'index.html')
