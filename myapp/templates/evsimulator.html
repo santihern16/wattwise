@@ -7,19 +7,34 @@
 {% block body %}
 <link rel="stylesheet" href="{% static 'styles/evsimulator.css' %}">
 <section>
+    {% if messages %}
+        <div class="container mt-3">
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
     <h2 class="h2">Vehiculos Registrados</h2>
-    <div">
+    <div>
     {% if vehiculos %}
     <div class="container">
         {% for v in vehiculos %}
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{% static 'img/ford.jpg' %}" alt="Card image cap">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'img/vehicle.jpg' %}" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">{{ v.marca_modelo }}</h5>
-              <p class="card-text">Año {{ v.ano_fabricacion }}</p>
-              <p class="card-text">Transmisión {{ v.tipo_transmision }}</p>
-              <p class="card-text">Motor {{ v.tamano_motor }} CC</p>
-              <a href="{% url 'calculator' v.id %}" class="btn btn-primary">Hacer Cálculo</a>
+                <h5 class="card-title">{{ v.marca_modelo }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Año {{ v.ano_fabricacion }}</li>
+                <li class="list-group-item">Transmisión {{ v.tipo_transmision }}</li>
+                <li class="list-group-item">Motor {{ v.tamano_motor }} CC</li>
+            </ul>
+            <div class="card-body">
+                <a href="{% url 'registrarConsumo' v.id %}" class="card-link">Hacer Cálculo</a>
+                <hr>
+                <a href="{% url 'registroPorVehiculo' v.id %}" class="card-link">Ver Cálculos Hechos</a>
             </div>
           </div>        
         {% endfor %}
@@ -31,4 +46,7 @@
            
     </div>
 </section>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="{% url 'mostrarTodosLosResultados' %}" class="btn btn-primary">Ver el historial de Cálculos</a>
+</div>
 {% endblock %}

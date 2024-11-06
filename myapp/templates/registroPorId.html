@@ -1,0 +1,62 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}
+    Registros de Consumo del Vehículo
+{% endblock  %}
+
+{% block body %}
+<style>
+    .card-link-wrapper {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-link-wrapper:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+    }
+    .card-body {
+        transition: background-color 0.3s ease;
+    }
+    .card-link-wrapper:hover .card-body {
+        background-color: #f8f9fa;
+    }
+</style>
+
+<div class="container">
+    <h1 class="text-center mb-4">Registros de Costos y Consumos de tu Vehículo {{ vehiculo.marca_modelo }}</h1>
+    {% if calculos %}
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for calculo in calculos %}
+        <div class="col">
+            <a href="{% url 'mostrarResultados' calculo.consumo.id %}" class="card-link-wrapper card h-100 text-decoration-none text-dark">
+                <div class="card-body">
+                    <h5 class="card-title">Registro de Costos y Consumos # {{ forloop.counter }} </h5>
+                    <p class="card-text">Fecha de Registro: {{ calculo.consumo.fecha_registro }}</p>
+                    <p class="card-text">Kilometraje Anual: {{ calculo.consumo.kilometraje_anual|intcomma }} km</p>
+                    <p class="card-text">Consumo Promedio: {{ calculo.consumo.consumo_promedio|intcomma }} L/100km</p>
+                    <p class="card-text">Distancia Promedio por Viaje: {{ calculo.consumo.distancia_promedio|intcomma }} km</p>
+                    <p class="card-text">Frecuencia de Conducción: {{ calculo.consumo.frecuencia_conduccion|intcomma }}</p>
+                    <p class="card-text">Precio del Combustible: ${{ calculo.consumo.precio_combustible|intcomma }} por galón</p>
+                    <p class="card-text">Costos de Mantenimiento: ${{ calculo.consumo.costos_mantenimiento|intcomma }} por año</p>
+                    <p class="card-text">Impuestos Vehiculares: ${{ calculo.consumo.impuestos_vehiculares|intcomma }} por año</p>
+                    <p class="card-text">Seguros: ${{ calculo.consumo.seguros|intcomma }} por año</p>
+                    <p class="card-text">Consumo Anual: {{ calculo.consumo_anual|intcomma }} km</p>
+                    <p class="card-text">Costo Anual de Combustible: ${{ calculo.costo_anual_combustible|intcomma }}</p>
+                    <p class="card-text">Costo Total de Mantenimiento, Impuestos y Seguros: ${{ calculo.costo_fijo_anual|intcomma }}</p>
+                    <p class="card-text">Costo Total Anual de Uso del Vehículo: ${{ calculo.costo_total_anual|intcomma }}</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>No hay registros de consumo para este vehículo.</p>
+        <a href="{% url 'registrarConsumo' vehiculo.id %}" class="btn btn-primary">Hacer Registro de Consumo</a>
+    {% endif %}
+</div>
+{% endblock %}

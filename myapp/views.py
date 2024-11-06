@@ -87,32 +87,21 @@ def registrarVehiculo(request):
         return redirect('profile')
     
 def registrarConsumo(request, id):
-    if request.method == 'POST':
-        try:
-            kilometraje_anual = request.POST['kilometrajeAnual']
-            consumo_promedio = request.POST['consumoPromedio']
-            distancia_promedio = request.POST['distanciaPromedio']
-            frecuencia_conduccion = request.POST['frecuenciaConduccion']
-            precio_combustible = request.POST['precioCombustible']
-            costos_mantenimiento = request.POST['costosMantenimiento']
-            impuestos_vehiculares = request.POST['impuestosVehiculares']
-            seguros = request.POST['seguros']
-            
-            vehiculo = Vehiculo.objects.get(id=id, user=request.user)
-            consumo = Consumo.objects.create(vehiculo=vehiculo, kilometraje_anual=kilometraje_anual, consumo_promedio=consumo_promedio, distancia_promedio=distancia_promedio, frecuencia_conduccion=frecuencia_conduccion, precio_combustible=precio_combustible, costos_mantenimiento=costos_mantenimiento, impuestos_vehiculares=impuestos_vehiculares, seguros=seguros)
-            consumo.save()
-            
-            consumo_anual = float(kilometraje_anual) * float(consumo_promedio) / 100
-            print(f'Consumo anual: {consumo_anual}')
-            
-            print('Consumo registrado')
-            return redirect('evSimulator')
-        except Exception as e:
-            print(e)
-            return render(request, 'calculator.html', {'error': f'Error al registrar el consumo: {e}'})
+    vehiculo = get_object_or_404(Vehiculo, id=id, user=request.user)
+    if request.method == 'GET':
+        return render(request, 'calculator.html', {
+            'vehiculo': vehiculo
+        })
     else:
-        # Manejar solicitudes GET
-        return redirect('evSimulator')
+        try:
+            consumo = Consumo.objects.create(vehiculo=vehiculo, kilometraje_anual=request.POST['kilometrajeAnual'], consumo_promedio=request.POST['consumoPromedio'], distancia_promedio=request.POST['distanciaPromedio'], frecuencia_conduccion=request.POST['frecuenciaConduccion'], precio_combustible=request.POST['precioCombustible'], costos_mantenimiento=request.POST['costosMantenimiento'], impuestos_vehiculares=request.POST['impuestosVehiculares'], seguros=request.POST['seguros'])
+            consumo.save()
+            return redirect('mostrarResultados', id=consumo.id)
+        except Exception as e:
+            return render(request, 'calculator.html', {
+                'vehiculo': vehiculo,
+                'error': f'Error al registrar el consumo: {e}'
+            })
     
 def evSimulator(request):
     if not request.user.is_authenticated:
@@ -130,6 +119,77 @@ def calculator(request, id):
     return render(request, 'calculator.html', {
         'vehiculo': vehiculo
     })
+
+@login_required    
+def mostarResultados(request, id):
+    consumo = get_object_or_404(Consumo, id=id)
+    # Verificar que el usuario autenticado es el propietario del vehículo asociado al consumo
+    if consumo.vehiculo.user != request.user:
+        messages.error(request, 'No tienes permiso para ver este registro.')
+        return redirect('evSimulator')
     
-def hola_mundo(request):
-    return render(request, 'index.html')
+    consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
+    costo_anual_combustible = consumo_anual * consumo.precio_combustible
+    costo_fijo_anual = consumo.costos_mantenimiento + consumo.impuestos_vehiculares + consumo.seguros
+    costo_total_anual = costo_anual_combustible + costo_fijo_anual
+    
+    calculos = []
+    calculos.append({
+        'consumo_anual': consumo_anual,
+        'costo_anual_combustible': costo_anual_combustible,
+        'costo_fijo_anual': costo_fijo_anual,
+        'costo_total_anual': costo_total_anual,
+    })
+    print(calculos)
+    return render(request, 'resultados.html', {
+        'consumo': consumo,
+        'calculos': calculos
+    })
+
+@login_required    
+def mostrarTodosLosResultados(request):
+    consumos = Consumo.objects.all()
+    calculos = []
+    
+    for consumo in consumos:
+        consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
+        costo_anual_combustible = consumo_anual * consumo.precio_combustible
+        costo_fijo_anual = consumo.costos_mantenimiento + consumo.impuestos_vehiculares + consumo.seguros
+        costo_total_anual = costo_anual_combustible + costo_fijo_anual
+        
+        calculos.append({
+            'consumo': consumo,
+            'consumo_anual': consumo_anual,
+            'costo_anual_combustible': costo_anual_combustible,
+            'costo_fijo_anual': costo_fijo_anual,
+            'costo_total_anual': costo_total_anual,
+            'vehiculo': consumo.vehiculo.marca_modelo,
+        })
+    return render(request, 'todosLosConsumos.html', {
+        'consumos': consumos,
+        'calculos': calculos
+        })
+    
+def mostrarRegistroPorId(request, id):
+    vehiculo = get_object_or_404(Vehiculo, id=id, user=request.user)
+    consumos = Consumo.objects.filter(vehiculo=vehiculo)
+    calculos = []
+    
+    for consumo in consumos:
+        consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
+        costo_anual_combustible = consumo_anual * consumo.precio_combustible
+        costo_fijo_anual = consumo.costos_mantenimiento + consumo.impuestos_vehiculares + consumo.seguros
+        costo_total_anual = costo_anual_combustible + costo_fijo_anual
+        
+        calculos.append({
+            'consumo': consumo,
+            'consumo_anual': consumo_anual,
+            'costo_anual_combustible': costo_anual_combustible,
+            'costo_fijo_anual': costo_fijo_anual,
+            'costo_total_anual': costo_total_anual,
+            'vehiculo': consumo.vehiculo.marca_modelo,
+        })
+    return render(request, 'registroPorId.html', {
+        'vehiculo': vehiculo,
+        'calculos': calculos
+    })

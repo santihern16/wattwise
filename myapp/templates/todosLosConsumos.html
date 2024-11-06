@@ -1,0 +1,90 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}
+    Consumos Registrados
+{% endblock  %}
+
+{% block body %}
+<style>
+    /* Contenedor de las tarjetas */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* Estilos para la tarjeta */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilos para los enlaces dentro de la tarjeta */
+.card a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 20px;
+}
+
+/* Estilos para los enlaces al pasar el ratón */
+
+
+/* Estilos adicionales para mejorar la apariencia */
+.card h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.card button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+</style>
+<div>
+    <h1 class="text-center mb-4">Todos los Resultados</h1>
+   <div>
+    {% if consumos %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for c in calculos %}
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <a href="{% url 'mostrarResultados' c.consumo.id %}" class="card-link"><h5 class="card-title text-primary">{{ c.vehiculo }}</h5></a>
+                        <p class="card-text"><strong>Consumo Anual:</strong> {{ c.consumo_anual|intcomma }} L</p>
+                        <p class="card-text"><strong>Costo Anual de Combustible:</strong> ${{ c.costo_anual_combustible|intcomma }}</p>
+                        <p class="card-text"><strong>Costo Fijo Anual (Mantenimiento e Impuestos):</strong> ${{ c.costo_fijo_anual|intcomma }}</p>
+                        <p class="card-text"><strong>Costo Total Anual de Uso del Vehículo:</strong> ${{ c.costo_total_anual|intcomma }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>No tienes Consumos registrados en el EVSimulator</p>
+        <a href="{% url 'profile' vehiculo.id %}" class="btn btn-primary">Haz click aquí para realizar el registro!</a>
+    {% endif %}
+           
+    </div>
+</div>
+{% endblock %}
