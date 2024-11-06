@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}
+    Resultados del Consumo
+{% endblock  %}
+
+{% block body %}
+<div class="container my-5">
+    <a href="{% url 'evSimulator' %}" class="card-link"></a>
+    <h1 class="text-center mb-4">Resultados</h1>
+    
+    <!-- Sección de Datos de Entrada -->
+    <div class="card mb-4 shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>Datos de Consumo Ingresados</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Kilometraje anual:</strong> {{ consumo.kilometraje_anual|intcomma }} km</li>
+            <li class="list-group-item"><strong>Consumo Promedio:</strong> {{ consumo.consumo_promedio|floatformat:2 }} L/100km</li>
+            <li class="list-group-item"><strong>Distancia Promedio:</strong> {{ consumo.distancia_promedio|intcomma }} km</li>
+            <li class="list-group-item"><strong>Frecuencia de Conducción:</strong> {{ consumo.frecuencia_conduccion }}</li>
+            <li class="list-group-item"><strong>Precio del Combustible:</strong> ${{ consumo.precio_combustible|intcomma }} por galón</li>
+            <li class="list-group-item"><strong>Costos de Mantenimiento:</strong> ${{ consumo.costos_mantenimiento|intcomma }} anuales</li>
+            <li class="list-group-item"><strong>Impuestos Vehiculares:</strong> ${{ consumo.impuestos_vehiculares|intcomma }} anuales</li>
+            <li class="list-group-item"><strong>Seguros Vehiculares:</strong> ${{ consumo.seguros|intcomma }} anuales</li>
+        </ul>
+    </div>
+    
+    <!-- Sección de Resultados de Cálculos -->
+    <div class="card shadow">
+        <div class="card-header bg-success text-white text-center">
+            <h3>Cálculos de Costos y Consumo</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for calculo in calculos %}
+                <li class="list-group-item"><strong>Consumo Anual de Combustible:</strong> {{ calculo.consumo_anual|intcomma }} L</li>
+                <li class="list-group-item"><strong>Costo Anual de Combustible:</strong> ${{ calculo.costo_anual_combustible|intcomma }}</li>
+                <li class="list-group-item"><strong>Costo Total de Mantenimiento, Impuestos y Seguros:</strong> ${{ calculo.costo_fijo_anual|intcomma }}</li>
+                <li class="list-group-item"><strong>Costo Total Anual de Uso del Vehículo:</strong> ${{ calculo.costo_total_anual|intcomma }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

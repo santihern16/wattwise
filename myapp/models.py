@@ -38,3 +38,6 @@ class Consumo(models.Model):
     costos_mantenimiento = models.PositiveIntegerField()
     impuestos_vehiculares = models.PositiveIntegerField()
     seguros = models.PositiveIntegerField()
+    
+    def __str__(self):
+        return f'{self.vehiculo.marca_modelo}'
