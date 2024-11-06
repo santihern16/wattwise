@@ -22,7 +22,7 @@
     <div class="container">
         {% for v in vehiculos %}
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{% static 'img/ford.jpg' %}" alt="Card image cap">
+            <img class="card-img-top" src="{% static 'img/vehicle.jpg' %}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{ v.marca_modelo }}</h5>
               <p class="card-text">Año {{ v.ano_fabricacion }}</p>
@@ -41,4 +41,7 @@
            
     </div>
 </section>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="{% url 'mostrarTodosLosResultados' %}" class="btn btn-primary">Ver el historial de Cálculos</a>
+</div>
 {% endblock %}

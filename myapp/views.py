@@ -153,8 +153,16 @@ def mostrarTodosLosResultados(request):
     
     for consumo in consumos:
         consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
+        costo_anual_combustible = consumo_anual * consumo.precio_combustible
+        costo_fijo_anual = consumo.costos_mantenimiento + consumo.impuestos_vehiculares + consumo.seguros
+        costo_total_anual = costo_anual_combustible + costo_fijo_anual
+        
         calculos.append({
+            'consumo': consumo,
             'consumo_anual': consumo_anual,
+            'costo_anual_combustible': costo_anual_combustible,
+            'costo_fijo_anual': costo_fijo_anual,
+            'costo_total_anual': costo_total_anual,
             'vehiculo': consumo.vehiculo.marca_modelo,
         })
     return render(request, 'todosLosConsumos.html', {
@@ -165,7 +173,23 @@ def mostrarTodosLosResultados(request):
 def mostrarRegistroPorId(request, id):
     vehiculo = get_object_or_404(Vehiculo, id=id, user=request.user)
     consumos = Consumo.objects.filter(vehiculo=vehiculo)
+    calculos = []
+    
+    for consumo in consumos:
+        consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
+        costo_anual_combustible = consumo_anual * consumo.precio_combustible
+        costo_fijo_anual = consumo.costos_mantenimiento + consumo.impuestos_vehiculares + consumo.seguros
+        costo_total_anual = costo_anual_combustible + costo_fijo_anual
+        
+        calculos.append({
+            'consumo': consumo,
+            'consumo_anual': consumo_anual,
+            'costo_anual_combustible': costo_anual_combustible,
+            'costo_fijo_anual': costo_fijo_anual,
+            'costo_total_anual': costo_total_anual,
+            'vehiculo': consumo.vehiculo.marca_modelo,
+        })
     return render(request, 'registroPorId.html', {
-        'consumos': consumos,
-        'vehiculo': vehiculo
+        'vehiculo': vehiculo,
+        'calculos': calculos
     })
