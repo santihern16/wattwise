@@ -1,9 +1,34 @@
-"# wattwise" 
+# Proyecto WattWise
 
-Test from santi's pc
+## Configuración del Entorno
 
-otra prueba de git push desde Bogotá
+1. Clona el repositorio:
+    ```sh
+    git clone https://github.com/santihern16/wattwise.git
+    cd tu-repositorio
+    ```
 
-Hola desde feature/test
+2. Crea y activa un entorno virtual:
+    ```sh
+    python -m venv env
+    source env/bin/activate  # En Windows usa `env\Scripts\activate`
+    ```
 
-Hola desde CodeSpaces
+3. Instala las dependencias:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+4. Aplica las migraciones para crear la base de datos:
+    ```sh
+    python manage.py migrate
+    ```
+
+5. Inicia el servidor de desarrollo:
+    ```sh
+    python manage.py runserver
+    ```
+
+## Uso
+
+- Accede a la aplicación en `http://127.0.0.1:8000/`
