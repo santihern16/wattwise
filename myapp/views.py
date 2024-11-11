@@ -85,7 +85,8 @@ def registrarVehiculo(request):
             return render(request, 'profile.html', {'error': f'Error al registrar el vehículo: {e}'})
     else:
         return redirect('profile')
-    
+
+@login_required
 def registrarConsumo(request, id):
     vehiculo = get_object_or_404(Vehiculo, id=id, user=request.user)
     
