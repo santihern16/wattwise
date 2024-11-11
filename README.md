@@ -57,7 +57,7 @@ El proyecto se puede configurar de dos maneras: mediante `git clone` o utilizand
 
 2. Inicia un contenedor usando la imagen descargada:
     ```sh
-    docker run -d -p 8000:8000 santihern/wattwise:1.1
+    docker run -d -p 8000:8000 santihern/wattwise
     ```
 
 Esto iniciará un contenedor en segundo plano (-d) y mapeará el puerto 8000 del contenedor al puerto 8000 de la máquina host (-p 8000:8000).
