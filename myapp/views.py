@@ -32,7 +32,7 @@ def registro(request):
     if request.user.is_authenticated:
         return redirect('index')
     if request.method == 'GET':
-        return render(request, 'registro.html')
+        return render(request, 'registrarse.html')
     else:
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
@@ -42,7 +42,7 @@ def registro(request):
         email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
         if not re.match(email_regex, email):
             messages.error(request, 'Por favor, introduce un correo electrónico válido con un dominio completo.')
-            return render(request, 'registro.html')
+            return render(request, 'registrarse.html')
         
         if password1 == password2:   
             try:    
@@ -53,10 +53,10 @@ def registro(request):
                 return redirect('index')
             except Exception as e:
                 messages.error(request, 'Error al registrarse, el nombre de usuario ya está en uso')
-                return render(request, 'registro.html')
+                return render(request, 'registrarse.html')
         else:
             messages.error(request, 'Las contraseñas no coinciden.')
-            return render(request, 'registro.html')
+            return render(request, 'registrarse.html')
         
 def cerrar_sesion(request):
     logout(request)
@@ -111,13 +111,6 @@ def evSimulator(request):
     vehiculos = Vehiculo.objects.filter(user=request.user)
     return render(request, 'evsimulator.html', {
         'vehiculos': vehiculos
-    })
-
-@login_required    
-def calculator(request, id):
-    vehiculo = get_object_or_404(Vehiculo, id=id, user=request.user)
-    return render(request, 'calculator.html', {
-        'vehiculo': vehiculo
     })
 
 @login_required    
