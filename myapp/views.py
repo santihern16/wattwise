@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
@@ -89,6 +89,7 @@ def registrarVehiculo(request):
 @login_required
 def registrarConsumo(request, id):
     vehiculo = get_object_or_404(Vehiculo, id=id, user=request.user)
+    
     if request.method == 'GET':
         return render(request, 'calculator.html', {
             'vehiculo': vehiculo
@@ -116,11 +117,7 @@ def evSimulator(request):
 
 @login_required    
 def mostarResultados(request, id):
-    consumo = get_object_or_404(Consumo, id=id)
-    # Verificar que el usuario autenticado es el propietario del vehículo asociado al consumo
-    if consumo.vehiculo.user != request.user:
-        messages.error(request, 'No tienes permiso para ver este registro.')
-        return redirect('evSimulator')
+    consumo = get_object_or_404(Consumo, id=id, vehiculo__user=request.user)
     
     consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
     costo_anual_combustible = consumo_anual * consumo.precio_combustible
@@ -142,7 +139,7 @@ def mostarResultados(request, id):
 
 @login_required    
 def mostrarTodosLosResultados(request):
-    consumos = Consumo.objects.all()
+    consumos = Consumo.objects.filter(vehiculo__user=request.user)
     calculos = []
     
     for consumo in consumos:
@@ -164,10 +161,11 @@ def mostrarTodosLosResultados(request):
         'calculos': calculos
         })
 
-@login_required    
+@login_required
 def mostrarRegistroPorId(request, id):
     vehiculo = get_object_or_404(Vehiculo, id=id, user=request.user)
     consumos = Consumo.objects.filter(vehiculo=vehiculo)
+        
     calculos = []
     
     for consumo in consumos:
