@@ -26,7 +26,7 @@ class Consumo(models.Model):
     vehiculo = models.ForeignKey(Vehiculo, on_delete=models.CASCADE)
     fecha_registro = models.DateTimeField(auto_now_add=True)
     kilometraje_anual = models.PositiveIntegerField()
-    consumo_promedio = models.DecimalField(max_digits=5, decimal_places=2)
+    consumo_promedio = models.DecimalField(max_digits=12, decimal_places=2)
     distancia_promedio = models.PositiveIntegerField()
     FRECUENCIA_CONDUCCION_CHOICES = [
         ('diaria', 'Diaria'),
@@ -34,7 +34,7 @@ class Consumo(models.Model):
         ('mensual', 'Mensual'),
     ]
     frecuencia_conduccion = models.CharField(max_length=20, choices=FRECUENCIA_CONDUCCION_CHOICES)
-    precio_combustible = models.PositiveIntegerField()
+    precio_combustible = models.DecimalField(max_digits=12, decimal_places=2)
     costos_mantenimiento = models.PositiveIntegerField()
     impuestos_vehiculares = models.PositiveIntegerField()
     seguros = models.PositiveIntegerField()
