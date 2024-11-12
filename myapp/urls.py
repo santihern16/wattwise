@@ -10,9 +10,9 @@ urlpatterns = [
     path('profile/registrarVehiculo/', views.registrarVehiculo, name='registrarVehiculo'),
     path('evsimulator/', views.evSimulator, name='evSimulator'),
     path('evsimulator/registrarConsumo/<int:id>/', views.registrarConsumo, name='registrarConsumo'),
-    path('registro/<int:id>/', views.mostarResultados, name='mostrarResultados'),
-    path('historialCalculos/', views.mostrarTodosLosResultados, name='mostrarTodosLosResultados'),
-    path('registroPorVehiculo/<int:id>/', views.mostrarRegistroPorId, name='registroPorVehiculo'),
+    path('registro/<int:id>/', views.mostrarRegistroConsumo, name='mostrarResultados'),
+    path('historialCalculos/', views.mostrarHistorialConsumos, name='mostrarTodosLosResultados'),
+    path('registroPorVehiculo/<int:id>/', views.mostrarRegistroPorVehiculo, name='registroPorVehiculo'),
 ]
 
 handler404 = 'myapp.views.pagina_no_encontrada'
