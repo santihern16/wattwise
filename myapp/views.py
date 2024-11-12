@@ -120,9 +120,9 @@ def mostrarRegistroConsumo(request, id):
     consumo = get_object_or_404(Consumo, id=id, vehiculo__user=request.user)
     
     consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
-    costo_anual_combustible = consumo_anual * consumo.precio_combustible
+    costo_anual_combustible = float(consumo_anual * consumo.precio_combustible)
     costo_fijo_anual = consumo.costos_mantenimiento + consumo.impuestos_vehiculares + consumo.seguros
-    costo_total_anual = costo_anual_combustible + costo_fijo_anual
+    costo_total_anual = float(costo_anual_combustible + costo_fijo_anual)
     
     calculos = []
     calculos.append({
@@ -144,9 +144,9 @@ def mostrarHistorialConsumos(request):
     
     for consumo in consumos:
         consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
-        costo_anual_combustible = consumo_anual * consumo.precio_combustible
+        costo_anual_combustible = float(consumo_anual * consumo.precio_combustible)
         costo_fijo_anual = consumo.costos_mantenimiento + consumo.impuestos_vehiculares + consumo.seguros
-        costo_total_anual = costo_anual_combustible + costo_fijo_anual
+        costo_total_anual = float(costo_anual_combustible + costo_fijo_anual)
         
         calculos.append({
             'consumo': consumo,
@@ -170,9 +170,9 @@ def mostrarRegistroPorVehiculo(request, id):
     
     for consumo in consumos:
         consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
-        costo_anual_combustible = consumo_anual * consumo.precio_combustible
+        costo_anual_combustible = float(consumo_anual * consumo.precio_combustible)
         costo_fijo_anual = consumo.costos_mantenimiento + consumo.impuestos_vehiculares + consumo.seguros
-        costo_total_anual = costo_anual_combustible + costo_fijo_anual
+        costo_total_anual = float(costo_anual_combustible + costo_fijo_anual)
         
         calculos.append({
             'consumo': consumo,
