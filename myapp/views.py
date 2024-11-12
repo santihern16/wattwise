@@ -116,7 +116,7 @@ def evSimulator(request):
     })
 
 @login_required    
-def mostarResultados(request, id):
+def mostrarRegistroConsumo(request, id):
     consumo = get_object_or_404(Consumo, id=id, vehiculo__user=request.user)
     
     consumo_anual = consumo.kilometraje_anual * consumo.consumo_promedio / 100
@@ -138,7 +138,7 @@ def mostarResultados(request, id):
     })
 
 @login_required    
-def mostrarTodosLosResultados(request):
+def mostrarHistorialConsumos(request):
     consumos = Consumo.objects.filter(vehiculo__user=request.user)
     calculos = []
     
@@ -156,13 +156,13 @@ def mostrarTodosLosResultados(request):
             'costo_total_anual': costo_total_anual,
             'vehiculo': consumo.vehiculo.marca_modelo,
         })
-    return render(request, 'todosLosConsumos.html', {
+    return render(request, 'historialConsumos.html', {
         'consumos': consumos,
         'calculos': calculos
         })
 
 @login_required
-def mostrarRegistroPorId(request, id):
+def mostrarRegistroPorVehiculo(request, id):
     vehiculo = get_object_or_404(Vehiculo, id=id, user=request.user)
     consumos = Consumo.objects.filter(vehiculo=vehiculo)
         
