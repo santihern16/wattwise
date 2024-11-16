@@ -186,3 +186,6 @@ def mostrarRegistroPorVehiculo(request, id):
         'vehiculo': vehiculo,
         'calculos': calculos
     })
+
+def hola_mundo():
+    return HttpResponse('Hola mundo desde PC de lau')
