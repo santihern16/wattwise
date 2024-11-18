@@ -188,4 +188,4 @@ def mostrarRegistroPorVehiculo(request, id):
     })
 
 def hola_mundo():
-    return HttpResponse('Hola mundo desde PC de lau')
+    return HttpResponse('Hola mundo desde PC de lau // esto es un test de cambio aplicando un ruleset')
