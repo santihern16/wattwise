@@ -187,5 +187,11 @@ def mostrarRegistroPorVehiculo(request, id):
         'calculos': calculos
     })
 
-def hola_mundo():
-    return HttpResponse('Hola mundo desde PC de lau // esto es un test de cambio aplicando un ruleset')
+def pagina_vehiculos(request):
+    return render(request, 'vehiculos.html')
+
+def fordF(request):
+    return render(request, 'fordf150.html')
+
+def fordMustang(request):
+    return render(request, 'FordMustang.html')

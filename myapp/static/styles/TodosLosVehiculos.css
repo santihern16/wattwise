@@ -1,0 +1,142 @@
+body {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Estilos de la parte de navegacion */
+.header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.header .nav a {
+    color: #666;
+}
+  
+.navhead{
+    font-size: 18px;
+}
+  
+.nav a:hover {
+    color: #44d62c;
+}
+
+.carousel-item {
+    padding-top: 20px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.info-section {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+.info-item {
+    border-right: 1px solid #dee2e6;
+    padding: 0 20px;
+}
+
+.info-item:last-child {
+    border-right: none;
+}
+
+.info-title {
+    color: #000000;
+    font-size: 24px;
+}
+
+.info-value {
+    color: #44d62c;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.info-value-sup {
+    font-size: 12px;
+    vertical-align: super;
+}
+
+.info-value-sub {
+    color: #44d62c;
+    font-size: 16px;
+    vertical-align: super;
+}
+
+.img-fluid{
+    padding-top: 50px;
+    height: 300px;
+    width: 500px;
+    object-fit: cover;
+}
+
+.content {
+    padding: 10px;
+}
+
+.text-content h1 {
+    font-size: 2em;
+    color: #1A1A1A;
+}
+
+.text-content p {
+    font-size: 1em;
+    color: #1A1A1A;
+}
+
+.text-content ul {
+    list-style-type: circle;
+    padding: 0px 30px  0px 30px;
+
+}
+
+.text-content ul li {
+    font-size: 1em;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+}
+
+.body-title{
+    padding-top: 50px;
+}
+
+.title h1 {
+    padding-top: 50px;
+    font-size: 2.5rem;
+    color: #44d62c;
+    text-align: center;
+}
+
+.title p {
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: center;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    height: 500px; /* Set a fixed height for the cards */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #44d62c;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #000000;
+}
+
+.card-img-top{
+    max-height: 270px;
+}
