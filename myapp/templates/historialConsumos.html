@@ -81,8 +81,10 @@
         {% endfor %}
     </div>
     {% else %}
-        <p>No tienes historial de registros en el EVSimulator</p>
-        <a href="{% url 'evSimulator' %}" class="btn btn-primary">Haz click aquí para realizar el registro!</a>
+        <p class="text-center">No tienes consumos ni costos registrados</p>
+        <div class="text-center">
+            <a href="{% url 'evSimulator' %}" class="btn btn-primary">Realizar mi primer cálculo</a>
+        </div>
     {% endif %}
            
     </div>

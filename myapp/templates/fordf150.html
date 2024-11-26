@@ -1,0 +1,116 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+WattWise - Ford F150
+{% endblock  %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'styles/TodosLosVehiculos.css' %}">
+<div class="container mt-5">
+    <h1 class="text-center">Ford F-150</h1>
+
+    <!-- Carrusel de imágenes -->
+    <div id="miCarrusel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://cdn.prod.website-files.com/5ec85520c4dfff034b036be2/651cc4d2d02c35258f5856a6_ford1504.webp" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/2025-ford-f-150-lightning-102-67042a178ef3c.jpg?crop=0.665xw:1.00xh;0.168xw,0&resize=2048:*" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://neomotor.epe.es/binrepository/990x743/0c15/990d557/none/2594535/JXJG/ford-f-150-lightning-platinum-black_285-59401504_20240129174218.jpg" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#miCarrusel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#miCarrusel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <div class="container-fluid info-section">
+        <div class="row text-center">
+            <div class="col-md-3 info-item">
+                <div class="info-title">Precio desde</div>
+                <div class="info-value">$304.990.000<span class="info-value-sup">1</span></div>
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Motor PoweBoost</div>
+                <div class="info-value">3.5L V6 EcoBoost<span class="info-value-sup">®</span></div>
+                <small><div class="info-value-sub">Motor Eléctrico 33 KW<br>Torque 570 Nm</div></small>
+                
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Potencia</div>
+                <div class="info-value">430 hp</div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-title">Asientos</div>
+                <div class="info-value">5</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 order-md-1 col-12">
+                <img src="https://www.vdm.ford.com/content/dam/vdm_ford/live/en_us/ford/nameplate/f-150lightning/2024/collections/equipments/3_2/EPP7550_V3_32.jpg/jcr:content/renditions/cq5dam.web.768.768.jpeg" alt="Aerial view of a red Ford F-150 truck on a snowy surface, with people and snowmobiles around it" class="img-fluid" height="300" width="600">
+            </div>
+            <div class="col-md-6 order-md-2 col-12 text-content">
+                <h1 class="body-title">Tecnología, por Dentro y por Fuera</h1>
+                <p>La comodidad se combina con la utilidad en un interior espacioso y almacenamiento inteligente para lo que se te ocurra.</p>
+                <ul>
+                    <li>Bomba de Calor de Inyección de Vapor estándar diseñada para optimizar el consumo de energía del vehículo, para mejorar el desempeño de la calefacción en clima frío.</li>
+                    <li>Funcionalidad de Ford BlueCruise* Estándar en los modelos FLASH™ y superior.</li>
+                    <li>Paquete de Tecnología de Remolque estándar en los modelos XLT y superior. Incluye Pro Trailer Backup Assist™, Guía de Marcha Atrás en Remolque, Enganche Inteligente, Balanzas a Bordo y Conector de Remolque de Tráiler Inteligente.</li>
+                    <li>Luces LED adicionales ubicadas en la parte superior trasera de la cabina al lado de la luz de freno, la cual viene a iluminar el platón y particularmente su luz de sirga hacia la nueva compuerta trasera. Disponible en la Ford F-150 Platinum únicamente.</li>
+                    <li>Paquete de Tecnología de Remolque estándar en los modelos XLT y superior. Incluye Pro Trailer Backup Assist™, Guía de Marcha Atrás en Remolque, Enganche Inteligente, Balanzas a Bordo y Conector de Remolque de Tráiler Inteligente</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="title">
+            <h1>Confía en tu Vehículo Eléctrico Desde el Primer Día</h1>
+            <p>La ayuda que necesitas, desde el primer día de propiedad y más allá.</p>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Carga en casa" class="card-img-top" height="300" src="https://www.vdm.ford.com/content/dam/vdm_ford/live/en_us/ford/nameplate/f-150lightning/2024/collections/equipments/3_2/Home-Charging_D.jpg/jcr:content/renditions/cq5dam.web.1440.1440.jpeg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Carga en Casa</h5>
+                        <p class="card-text">Comienza cada día con una carga completa. Compra o arrienda un vehículo eléctrico Ford y serás elegible para uncargador residencial y una instalación estándar de cortesía.* Una forma más en la que Ford se ocupa de lo tuyo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Carga En La Carretera" class="card-img-top" height="300" src="https://www.vdm.ford.com/content/dam/vdm_ford/live/en_us/ford/nameplate/f-150lightning/2024/collections/equipments/3_2/Public-Charging_D.jpg/jcr:content/renditions/cq5dam.web.1440.1440.jpeg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Carga En La Carretera</h5>
+                        <p class="card-text">Encuentra y paga por cargar con la Aplicación FordPass en tu ruta actual en la Navegación Conectada Integrada de Ford. Además, con la Red de Carga tendrás 11.4 a la mayor red pública de recarga de América para elegir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Confianza en la Batería" class="card-img-top" height="300" src="https://www.vdm.ford.com/content/dam/vdm_ford/live/en_us/ford/nameplate/f-150lightning/2024/collections/equipments/3_2/Battery-Confidence_D.jpg/jcr:content/renditions/cq5dam.web.1440.1440.jpeg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Confianza en la Batería</h5>
+                        <p class="card-text">Los vehículos eléctricos Ford tienen una garantía de ocho años/100 mil millas para baterías de alto voltaje.Así tendrás ayuda a largo plazo para el estado de tu batería.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}

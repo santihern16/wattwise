@@ -1,0 +1,118 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+    WattWise - Ford Explorer EV
+{% endblock  %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'styles/TodosLosVehiculos.css' %}">
+
+<div class="container mt-5">
+    <h1 class="text-center">Tesla Cybertruck</h1>
+
+    <!-- Carrusel de imágenes -->
+    <div id="miCarrusel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://media.cnn.com/api/v1/images/stellar/prod/cnne-1680542-cybertruck.jpg?c=16x9&q=h_833,w_1480,c_fill" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://es.gizmodo.com/app/uploads/2019/11/kd5kptpgkrqinukrfpar.jpg" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://soymotor.com/sites/default/files/2023-12/tesla-cybertruck-2024-exterior-2-soymotor.jpg" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#miCarrusel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#miCarrusel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <div class="container-fluid info-section">
+        <div class="row text-center">
+            <div class="col-md-3 info-item">
+                <div class="info-title">Precio desde</div>
+                <div class="info-value">$800.000.000<span class="info-value-sup">1</span></div>
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Dual Motor (AWD) con tracción total.</div>
+                <div class="info-value">610 kW<span class="info-value-sup">®</span></div>
+                <small><div class="info-value-sub">Batería 512 kWh<br>711 Nm</div></small>
+                
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Potencia</div>
+                <div class="info-value">600 hp</div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-title">Asientos</div>
+                <div class="info-value">6</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 order-md-1 col-12">
+                <img src="https://www.autosrodando.com/wp-content/uploads/2023/08/tesla-cybertruck_01.jpg.webp" alt="Aerial view of a red Ford F-150 truck on a snowy surface, with people and snowmobiles around it" class="img-fluid" height="300" width="600">
+            </div>
+            <div class="col-md-6 order-md-2 col-12 text-content">
+                <h1 class="body-title">Tesla Cybertruck: Potencia, Innovación y Estilo Futurista</h1>
+                <p>Con un diseño revolucionario y capacidades excepcionales, la Tesla Cybertruck redefine el concepto de las camionetas eléctricas, ofreciendo rendimiento extremo y funcionalidad avanzada.</p>
+                <ul>
+                    <li>Motor Tri-Motor AWD con potencia de hasta 610 kW (820 hp).</li>
+                    <li>Batería con capacidad estimada de 123 kWh, proporcionando una autonomía de hasta 804 km.</li>
+                    <li>Torque de más de 1,200 Nm para un rendimiento todoterreno incomparable.</li>
+                    <li>Capacidad de remolque de hasta 6,350 kg.</li>
+                    <li>Interior espacioso con capacidad para 6 pasajeros.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="title">
+            <h1>Tesla Cybertruck: El Futuro del Desempeño y la Resistencia</h1>
+            <p>Combina diseño único, potencia extrema y tecnología innovadora en un vehículo eléctrico que redefine la conducción todoterreno.</p>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Diseño Futurista e Irrompible" class="card-img-top" height="300" src="https://larazon.co/wp-content/uploads/2024/11/tesla.jpg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Diseño Futurista e Irrompible</h5>
+                        <p class="card-text">Con una carrocería de acero inoxidable ultrarresistente y vidrios blindados, la Cybertruck está diseñada para enfrentar cualquier desafío, dentro o fuera del camino.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Rendimiento Imparable" class="card-img-top" height="300" src="https://hips.hearstapps.com/hmg-prod/images/2025-tesla-cybertruck-3-672e75cce7814.jpg?crop=0.559xw:0.630xh;0.122xw,0.344xh&resize=768:*" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Rendimiento Imparable</h5>
+                        <p class="card-text">Acelera de 0 a 100 km/h en tan solo 2.9 segundos y disfruta de una capacidad de remolque de más de 6,350 kg con su versión tri-motor AWD.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Autonomía y Versatilidad" class="card-img-top" height="300" src="https://external-preview.redd.it/OgNn043uRzU5SviXyZq9eWRhfMKWvqDbY8Tyyeb5Qcs.jpg?width=640&crop=smart&auto=webp&s=0d69e5a63b046ff122e0499f35242bf48386be40" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Autonomía y Versatilidad</h5>
+                        <p class="card-text">Con una autonomía de hasta 800 km y carga rápida con Superchargers, la Cybertruck te lleva más lejos mientras mantiene un enfoque sostenible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}

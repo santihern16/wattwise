@@ -1,0 +1,117 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+    WattWise - Ford Mustang Mach-E
+{% endblock  %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'styles/TodosLosVehiculos.css' %}">
+<div class="container mt-5">
+    <h1 class="text-center">Ford Mustang Mach-E</h1>
+
+    <!-- Carrusel de imágenes -->
+    <div id="miCarrusel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://4kwallpapers.com/images/wallpapers/ford-mustang-mach-e-1920x1080-13506.jpg" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.motor1.com/images/mgl/mME1qe/s1/ford-mustang-mache.jpg" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.motor.com.co/__export/1694107984744/sites/motor/img/2023/09/07/ford_mustang_mach-e_rally_2024_01.jpg_1666282430.jpg" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#miCarrusel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#miCarrusel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <div class="container-fluid info-section">
+        <div class="row text-center">
+            <div class="col-md-3 info-item">
+                <div class="info-title">Precio desde</div>
+                <div class="info-value">$269.990.000<span class="info-value-sup">1</span></div>
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Motor eléctricos (AWD)</div>
+                <div class="info-value">358 kW<span class="info-value-sup">®</span></div>
+                <small><div class="info-value-sub">Batería 88 kWh<br>Recarga rápida</div></small>
+                
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Potencia</div>
+                <div class="info-value">346 hp</div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-title">Asientos</div>
+                <div class="info-value">5</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 order-md-1 col-12">
+                <img src="https://es.ford.com/is/image/content/dam/brand_ford/en_us/brand/suvs/mach-e/dm/24_FRD_MCH_48135_MH_v2.tif?croppathe=1_21x9&wid=1440" alt="Aerial view of a red Ford F-150 truck on a snowy surface, with people and snowmobiles around it" class="img-fluid" height="300" width="600">
+            </div>
+            <div class="col-md-6 order-md-2 col-12 text-content">
+                <h1 class="body-title">Rendimiento eléctrico sin compromisos</h1>
+                <p>El Ford Mustang Mach-E combina un diseño icónico con tecnología moderna y un rendimiento excepcional. Disfruta de una conducción dinámica, una autonomía confiable y características avanzadas que redefinen lo que significa conducir eléctrico.</p>
+                <ul>
+                    <li>Batería de 88 kWh con capacidad de carga rápida DC.</li>
+                    <li>Sistema de infoentretenimiento SYNC® 4A con pantalla de 15.5".</li>
+                    <li>Ford Co-Pilot360™ para asistencia avanzada en la conducción.</li>
+                    <li>Aceleración de 0 a 100 km/h en tan solo 5.8 segundos.</li>
+                    <li>Garantía extendida para batería y componentes eléctricos.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="title">
+            <h1>Confía en tu Vehículo Eléctrico Desde el Primer Día</h1>
+            <p>La ayuda que necesitas, desde el primer día de propiedad y más allá.</p>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Carga en casa" class="card-img-top" height="300" src="https://es.ford.com/is/image/content/dam/vdm_ford/live/en_us/ford/nameplate/mache/2024/collections/dm/24_FRD_MCH_48102_rprd_MH_v2.tif?croppathe=1_4x3&wid=900" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Energía al Instante</h5>
+                        <p class="card-text">Acelera tu vida con tiempos de carga rápidos y acceso a estaciones de carga en toda la región, manteniéndote siempre en movimiento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Carga En La Carretera" class="card-img-top" height="300" src="https://es.ford.com/is/image/content/dam/vdm_ford/live/en_us/ford/nameplate/mache/2024/collections/dm/24_FRD_MME_59707.tif?croppathe=1_4x3&wid=900" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Potencia en Silencio</h5>
+                        <p class="card-text">Experimenta una conducción poderosa sin ruido, con modos de manejo que personalizan tu experiencia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Confianza en la Batería" class="card-img-top" height="300" src="https://es.ford.com/is/image/content/dam/vdm_ford/live/en_us/ford/nameplate/mache/2024/collections/dm/24_FRD_MCH_54860_MH_v2.tif?croppathe=1_4x3&wid=900" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Tecnología Mustang</h5>
+                        <p class="card-text">Experimenta un sistema innovador que te mantiene conectado, con actualizaciones inalámbricas y modos de conducción adaptables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}

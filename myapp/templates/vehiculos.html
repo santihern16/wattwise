@@ -1,0 +1,118 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}
+    WattWise - Vehículos
+{% endblock  %}
+
+{% block body %}
+<style>
+    body {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+  
+  /* Estilos de la parte de navegacion */
+.header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.header .nav a {
+    color: #666;
+}
+  
+.navhead{
+    font-size: 18px;
+}
+  
+.nav a:hover {
+    color: #44d62c;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+</style>
+<div class="container mt-5">
+    <h1 class="text-center">Vehículos eléctricos</h1>
+
+    <!-- Sección Ford -->
+    <h2 class="mt-4">Ford</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://storage.googleapis.com/a1aa/image/Wzy0E7eUjpR4SqwEWHtUPcaDpG1oJjaJufBOVUAfS3f9zP4OB.jpg" class="card-img-top" alt="Ford F150 Lightning">
+                <div class="card-body">
+                    <h5 class="card-title">Ford F150 Lightning</h5>
+                    <p class="card-text">$304.990.000</p>
+                    <a href="{% url 'fordF' %}" class="btn btn-success">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://storage.googleapis.com/a1aa/image/FLL7fPMYkEWARqt6iLT7rJrSH4DB0dVa3xVKLYLyDHWwfDuTA.jpg" class="card-img-top" alt="Ford Mustang Mach-E">
+                <div class="card-body">
+                    <h5 class="card-title">Ford Mustang Mach-E</h5>
+                    <p class="card-text">$269.990.000</p>
+                    <a href="{% url 'fordMustang' %}"" class="btn btn-success">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://storage.googleapis.com/a1aa/image/i2n8JS8DnGZ2JhqQHcIsMuVgwINvdSeVe5aViREIXfE9ifMPB.jpg" class="card-img-top" alt="Ford Explorer EV">
+                <div class="card-body">
+                    <h5 class="card-title">Ford Explorer EV</h5>
+                    <p class="card-text">$319.990.0000</p>
+                    <a href="{% url 'fordExplorer' %}" class="btn btn-success">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://storage.googleapis.com/a1aa/image/pzviDc4EBu5aMN6WkYWKKU5ownQrzqz6nOWhJalKKgdBDh7E.jpg" class="card-img-top" alt="Ford Escape">
+                <div class="card-body">
+                    <h5 class="card-title">Ford Escape</h5>
+                    <p class="card-text">$229.990.000</p>
+                    <a href="{% url 'fordEscape' %}" class="btn btn-success">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <!-- Puedes agregar más cards de Ford aquí -->
+    </div>
+
+    <!-- Sección BMW -->
+    <h2 class="mt-4">Tesla</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://storage.googleapis.com/a1aa/image/J8VP0Em1WfRFTSejuSGbkLCKk9dziMQ5KMuGYcJDa3J2QqzTA.jpg" class="card-img-top" alt="Tesla Model S Plaid">
+                <div class="card-body">
+                    <h5 class="card-title">Tesla Model S Plaid</h5>
+                    <p class="card-text">$549.900.000</p>
+                    <a href="{% url 'teslaSPlaid' %}" class="btn btn-success">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrY6WeYuchHx9A_K6TIOkBDPGqly-4CqhSNQ&s" class="card-img-top" style="transform: scaleX(-1);" alt="Cybertruck">
+                <div class="card-body">
+                    <h5 class="card-title">Tesla Cybertruck</h5>
+                    <p class="card-text">$800.000.000</p>
+                    <a href="{% url 'teslaCybertruck' %}" class="btn btn-success">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <!-- Puedes agregar más cards de Tesla aquí -->
+    </div>
+
+    <!-- Agrega más secciones para otras marcas según sea necesario -->
+</div>
+{% endblock  %}

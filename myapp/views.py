@@ -131,7 +131,6 @@ def mostrarRegistroConsumo(request, id):
         'costo_fijo_anual': costo_fijo_anual,
         'costo_total_anual': costo_total_anual,
     })
-    print(calculos)
     return render(request, 'resultados.html', {
         'consumo': consumo,
         'calculos': calculos
@@ -187,5 +186,26 @@ def mostrarRegistroPorVehiculo(request, id):
         'calculos': calculos
     })
 
-def hola_mundo():
-    return HttpResponse('Hola mundo desde PC de lau // esto es un test de cambio aplicando un ruleset')
+def pagina_vehiculos(request):
+    return render(request, 'vehiculos.html')
+
+def fordF(request):
+    return render(request, 'fordf150.html')
+
+def fordMustang(request):
+    return render(request, 'FordMustang.html')
+
+def fordExplorer(request):
+    return render(request, 'FordExplorer.html')
+
+def fordEscape(request):
+    return render(request, 'FordEscape.html')
+
+def teslaSPlaid(request):
+    return render(request, 'TeslaSPlaid.html')
+
+def teslaCybertruck(request):
+    return render(request, 'TeslaCybertruck.html')
+
+def nosotros(request):
+    return render(request, 'Nosotros.html')

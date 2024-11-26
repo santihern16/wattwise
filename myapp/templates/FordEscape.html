@@ -1,0 +1,118 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+    WattWise - Ford Explorer EV
+{% endblock  %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'styles/TodosLosVehiculos.css' %}">
+
+<div class="container mt-5">
+    <h1 class="text-center">Ford Escape EV</h1>
+
+    <!-- Carrusel de imágenes -->
+    <div id="miCarrusel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.f1latam.com/autos/img/prin/ford_esc_45.jpg" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://cleanchargenetwork.com/wp-content/uploads/2023/04/ford-escape-phev.jpg" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.prod.website-files.com/5ec85520c4dfff034b036be2/65b83c24262c22867d8ea980_2024%20Ford%20Escape%20PHEV%20-3.webp" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#miCarrusel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#miCarrusel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <div class="container-fluid info-section">
+        <div class="row text-center">
+            <div class="col-md-3 info-item">
+                <div class="info-title">Precio desde</div>
+                <div class="info-value">$229.990.000<span class="info-value-sup">1</span></div>
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Motores Eléctricos FWD o AWD.</div>
+                <div class="info-value">250 kW<span class="info-value-sup">®</span></div>
+                <small><div class="info-value-sub">Batería 100 kWh<br>400 Nm</div></small>
+                
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Potencia</div>
+                <div class="info-value">335 hp</div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-title">Asientos</div>
+                <div class="info-value">5</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 order-md-1 col-12">
+                <img src="https://www.ford.com.co/content/dam/Ford/website-assets/latam/co/nameplate/escape-hybrid/2024/Overview/gallery-trigger/overlay/fco-escape-fhev-gal-trig-over-1.jpg" alt="Aerial view of a red Ford F-150 truck on a snowy surface, with people and snowmobiles around it" class="img-fluid"  height="300" width="600">
+            </div>
+            <div class="col-md-6 order-md-2 col-12 text-content">
+                <h1 class="body-title">Ford Escape EV: Innovación Eléctrica para tu Estilo de Vida Familiar</h1>
+                <p>Un SUV versátil que lleva la movilidad eléctrica al siguiente nivel. Ideal para familias activas, el Escape EV combina eficiencia, comodidad y tecnología avanzada.</p>
+                <ul>
+                    <li>Batería de iones de litio con autonomía de hasta 400 km.</li>
+                    <li>Sistema FordPass™ para localizar estaciones de carga fácilmente.</li>
+                    <li>Carga rápida compatible, 0-80% en menos de 40 minutos.</li>
+                    <li>Asientos traseros plegables con más de 1.000 litros de espacio de carga.</li>
+                    <li>Modos de manejo: Normal, Eco, Sport y Trail.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="title">
+            <h1>Ford Escape EV: Innovación y Versatilidad en Movimiento</h1>
+            <p>Experimenta un SUV eléctrico diseñado para ofrecer eficiencia, comodidad y tecnología, adaptándose a cada aspecto de tu vida.</p>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Adaptado a Tu Mundo" class="card-img-top" height="300" src="https://autosdeprimera.com/wp-content/uploads/2024/01/ford-kuga-phev-2024-a.jpg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Adaptado a Tu Mundo</h5>
+                        <p class="card-text">Cambia fácilmente entre ciudad y carretera con un SUV diseñado para cada estilo de vida. Modos de manejo ajustables para eficiencia en ciudad o rendimiento en carretera, con tracción adaptable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Autonomía Inteligente" class="card-img-top" height="300" src="https://www.f1latam.com/autos/img/prin/ford_esc_49.jpg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Autonomía Inteligente</h5>
+                        <p class="card-text">Maximiza cada carga con una tecnología que prioriza la eficiencia y el alcance.Hasta 402 km de autonomía con modo de conducción eco y carga rápida para el 80% en menos de 40 minutos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Conexión Total" class="card-img-top" height="300" src="https://www.ford.com.co/content/dam/Ford/website-assets/latam/co/nameplate/escape-hybrid/2024/Overview/gallery-trigger/overlay/fco-escape-fhev-gal-trig-over-7.jpg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Conexión Total</h5>
+                        <p class="card-text">Disfruta de una experiencia tecnológica de punta que simplifica tu día a día. Sistema FordPass Connect con Wi-Fi para hasta 10 dispositivos y actualizaciones automáticas del software.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}
