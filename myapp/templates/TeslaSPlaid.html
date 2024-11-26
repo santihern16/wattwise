@@ -1,0 +1,118 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+    WattWise - Ford Explorer EV
+{% endblock  %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'styles/TodosLosVehiculos.css' %}">
+
+<div class="container mt-5">
+    <h1 class="text-center">Tesla Model S Plaid</h1>
+
+    <!-- Carrusel de imágenes -->
+    <div id="miCarrusel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://cdn.topgear.es/sites/navi.axelspringer.es/public/media/image/2023/05/tesla-model-s-plaid-3027662.jpg?tf=3840x" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://es.gizmodo.com/app/uploads/2020/09/yk3zgqecnn89rr1dgxlz.jpg" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.topgear.es/sites/navi.axelspringer.es/public/media/image/2023/12/tesla-model-s-plaid-3254473.jpg?tf=3840x" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#miCarrusel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#miCarrusel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <div class="container-fluid info-section">
+        <div class="row text-center">
+            <div class="col-md-3 info-item">
+                <div class="info-title">Precio desde</div>
+                <div class="info-value">$549.900.000<span class="info-value-sup">1</span></div>
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Triple motor eléctrico</div>
+                <div class="info-value">761 kW<span class="info-value-sup">®</span></div>
+                <small><div class="info-value-sub">Batería 95 - 100 kWh<br>1400 Nm</div></small>
+                
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Potencia</div>
+                <div class="info-value">1,020 hp</div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-title">Asientos</div>
+                <div class="info-value">5</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 order-md-1 col-12">
+                <img src="https://www.teslarati.com/wp-content/uploads/2022/02/tesla-model-s-plaid-yoke.jpg" alt="Aerial view of a red Ford F-150 truck on a snowy surface, with people and snowmobiles around it" class="img-fluid" height="300" width="600">
+            </div>
+            <div class="col-md-6 order-md-2 col-12 text-content">
+                <h1 class="body-title">Velocidad y Tecnología de Alto Desempeño</h1>
+                <p>El Tesla Model S Plaid es un sedán eléctrico que redefine los estándares de velocidad, lujo y tecnología. Con una aceleración que desafía a los superdeportivos, un diseño aerodinámico refinado y la tecnología más avanzada, es ideal tanto para viajes largos como para un manejo deportivo.</p>
+                <ul>
+                    <li>Autonomía de hasta 637 km con una sola carga.</li>
+                    <li>Aceleración de 0 a 100 km/h en apenas 1.99 segundos.</li>
+                    <li>Velocidad máxima de 322 km/h, una de las más altas en vehículos eléctricos.</li>
+                    <li>Sistema de infoentretenimiento con pantalla táctil de 17 pulgadas y capacidad de videojuegos AAA.</li>
+                    <li>Volante "yoke" futurista para una experiencia de conducción única.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="title">
+            <h1>Tesla Model S Plaid: Revolución en el Asfalto</h1>
+            <p>Descubre el sedán eléctrico más avanzado del mundo, donde el rendimiento extremo, la tecnología de vanguardia y la eficiencia redefinen el lujo y la movilidad.</p>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Rendimiento Insuperable" class="card-img-top" height="300" src="https://soymotor.com/sites/default/files/usuarios/redaccion/portal/redaccion/tesla-model-s-plaid-tres-soymotor.jpg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Rendimiento Insuperable</h5>
+                        <p class="card-text">Acelera de 0 a 100 km/h en menos de 2 segundos con la potencia de un sistema de tres motores eléctricos y torque instantáneo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Tecnología de Vanguardia" class="card-img-top" height="300" src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Model-S-Interior-Grid-A-DMT.jpg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Tecnología de Vanguardia</h5>
+                        <p class="card-text">Disfruta de un interior futurista con una pantalla táctil de 17” y un sistema de sonido premium para entretenimiento total.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Autonomía Extendida" class="card-img-top" height="300" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tesla_Supercharging_in_Gilroy.jpg/330px-Tesla_Supercharging_in_Gilroy.jpg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Autonomía Extendida</h5>
+                        <p class="card-text">Viaja más lejos con una autonomía de hasta 637 km y accede a la red de Superchargers de Tesla para recargar en minutos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}

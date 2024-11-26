@@ -10,8 +10,8 @@
             <img src="{% static 'img/profile.jpg' %}" alt="Profile Picture" class="profile-picture">
             <h1 class="user-name">Bienvenido, {{ user.username }}!</h1>
             <p><strong>Email:</strong> {{ user.email }}</p>
-            <p><strong>Joined:</strong> {{ user.date_joined }} </p>
-            <p><strong>Last Login:</strong> {{ user.last_login }} </p>
+            <p><strong>Miembro desde:</strong> {{ user.date_joined }} </p>
+            <p><strong>Última Conexión:</strong> {{ user.last_login }} </p>
         </div> 
         <div class="profile-container">
             <h1>Mis vehiculos</h1>

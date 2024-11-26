@@ -1,0 +1,51 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+WattWise - Nosotros
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Sobre nosotros</h2>
+            <p class="text-justify">
+                En WattWise, somos un equipo apasionado por la sostenibilidad y la innovación en el transporte. Nuestra misión es facilitar la transición hacia vehículos eléctricos mediante el desarrollo de herramientas que permiten a los usuarios comparar costos y consumos entre vehículos eléctricos y tradicionales.
+            </p>
+            <p class="text-justify">
+                Hemos creado una calculadora interactiva que proporciona un análisis claro y accesible de los beneficios económicos y ambientales de optar por vehículos eléctricos. Creemos que, al empoderar a los usuarios con información relevante, podemos fomentar decisiones informadas que contribuyan a un futuro más sostenible.
+            </p>
+            <p class="text-justify">
+                Nuestro equipo está formado por profesionales comprometidos con la movilidad sostenible y la mejora continua de nuestras herramientas. Te invitamos a unirte a nosotros en este camino hacia un transporte más limpio y eficiente.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Carrusel de imágenes -->
+<div id="electricCarCarousel" class="carousel slide mt-5" data-ride="carousel" data-interval="2000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="d-block w-100" style="height: 400px; background-color: rgba(255, 255, 255, 0.5);">
+                <img src="https://storage.googleapis.com/a1aa/image/UzMcHzVQtp5rN9LZPNDPZjNHnbzte5ZeHLsYcHkJB7vngVyTA.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Vehículo eléctrico 1">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="d-block w-100" style="height: 400px; background-color: rgba(255, 255, 255, 0.5);">
+                <img src="https://storage.googleapis.com/a1aa/image/vMsfOdmQfkpkWU3Bmt5a9bZxfSHII4tARFHsE4RAreI56UJPB.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Vehículo eléctrico 2">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="d-block w-100" style="height: 400px; background-color: rgba(255, 255, 255, 0.5);">
+                <img src="https://storage.googleapis.com/a1aa/image/2sgFjkQgTU4wOBzHNb9wscHg0Hv3pKa1l1twWrqVC77yTl8E.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Vehículo eléctrico 3">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="d-block w-100" style="height: 400px; background-color: rgba(255, 255, 255, 0.5);">
+                <img src="https://storage.googleapis.com/a1aa/image/c7VrRBHABOJKOleZTMYqimhsF5B2XMWCDyfJQXjEiY9JOVyTA.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Vehículo eléctrico 4">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+    WattWise - Ford Explorer EV
+{% endblock  %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'styles/TodosLosVehiculos.css' %}">
+
+<div class="container mt-5">
+    <h1 class="text-center">Ford Explorer EV</h1>
+
+    <!-- Carrusel de imágenes -->
+    <div id="miCarrusel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://a.ccdn.es/cnet/contents/media/ford/1311625.jpg/900x505cut/" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://img.remediosdigitales.com/cb96d9/ford-explorer-ev-2023-1/1366_2000.jpeg" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://autoextragti.com/wp-content/uploads/2023/06/Lexie-Alford-With-Ford-Explorer-EV-main.jpg" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#miCarrusel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#miCarrusel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <div class="container-fluid info-section">
+        <div class="row text-center">
+            <div class="col-md-3 info-item">
+                <div class="info-title">Precio desde</div>
+                <div class="info-value">$319.990.000<span class="info-value-sup">1</span></div>
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Dual Motor AWD</div>
+                <div class="info-value">400 kW <span class="info-value-sup">®</span></div>
+                <small><div class="info-value-sub">Batería 100 kWh<br>860 Nm</div></small>
+                
+            </div>
+            <div class="col-md-3 info-item">
+                <div class="info-title">Potencia</div>
+                <div class="info-value">536 hp</div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-title">Asientos</div>
+                <div class="info-value">7</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 order-md-1 col-12">
+                <img src="https://cdn.prod.website-files.com/5ec85520c4dfff034b036be2/64378d92fc7174dd113a7487_WF56853_LITGRE_Apr_ford.webp" alt="Aerial view of a red Ford F-150 truck on a snowy surface, with people and snowmobiles around it" class="img-fluid" height="300" width="600">
+            </div>
+            <div class="col-md-6 order-md-2 col-12 text-content">
+                <h1 class="body-title">Innovación que Te Conduce al Futuro</h1>
+                <p>Un SUV eléctrico diseñado para la familia y la aventura. La Explorer EV combina potencia, capacidad todoterreno y tecnología de punta, brindando comodidad y confianza en cualquier camino.</p>
+                <ul>
+                    <li>Sistema de tracción total inteligente para cualquier terreno.</li>
+                    <li>Batería extendida con autonomía de hasta 480 km.</li>
+                    <li>Pantalla táctil vertical de 15" con interfaz SYNC® 4A.</li>
+                    <li>Capacidad de remolque de hasta 2.500 kg.</li>
+                    <li>Sistema de seguridad Ford Co-Pilot360™ con asistencia de mantenimiento de carril.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="title">
+            <h1>Revoluciona tu Forma de Manejar con Ford EVs</h1>
+            <p>Descubre cómo los vehículos eléctricos de Ford combinan rendimiento, sostenibilidad y estilo en un solo paquete.</p>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Aventuras Ilimitadas" class="card-img-top" height="300" src="https://www.ford.es/content/dam/guxeu/rhd/central/cars/cx740s/launch/generic/ford-cx740S-eu-running_costs-1000x667-artic_blue.jpg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Aventuras Ilimitadas</h5>
+                        <p class="card-text">Diseñado para explorar nuevos horizontes, con autonomía para los trayectos más exigentes.Autonomía de 480 km, batería de 100 kWh y opciones de carga rápida para largas rutas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Confort Superior" class="card-img-top" height="300" src="https://www.ford.es/content/dam/guxeu/rhd/central/cars/cx740s/launch/generic/ford-cx740S-eu-ev_life-1000x667-ev.jpg" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Confort Superior</h5>
+                        <p class="card-text">Lleva a toda la familia en un espacio amplio y con tecnología que prioriza tu comodidad.Asientos premium con ajuste eléctrico y ventilación, sistema de sonido B&O® de 14 parlantes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Seguridad en Cada Trayecto" class="card-img-top" height="300" src="https://a.ccdn.es/cnet/contents/media/ford/1311614.jpg/900x505cut/" width="600"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Seguridad en Cada Trayecto</h5>
+                        <p class="card-text">Protege lo que más importa con sistemas avanzados que hacen cada viaje más seguro.Cámaras 360°, detección de punto ciego y asistencia de frenado de emergencia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}
